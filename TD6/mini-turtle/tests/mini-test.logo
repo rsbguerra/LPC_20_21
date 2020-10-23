@@ -1,0 +1,27 @@
+def koch(i, j){
+    if j {
+        koch(i/3, j-1)
+        turnleft 60
+        koch(i/3, j-1)
+        turnright 120
+        koch(i/3, j-1)
+        turnleft 60
+        koch(i/3, j-1)
+    }
+    else {
+        forward i
+    }
+}
+
+penup
+forward -300
+turnleft 90
+forward 300
+turnright 90
+pendown
+
+repeat 3{
+    koch(600, 2)
+    turnright 120
+}
+

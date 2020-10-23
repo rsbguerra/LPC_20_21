@@ -1,0 +1,49 @@
+
+print 1
+print 1+1
+print 4-(1+0)
+print -(-4)
+
+# variáveis globais
+set x = 2
+print x*x+1
+
+set x = 3
+print 2*x
+
+# variáveis locais
+print let x = 2 in 3*x+1
+print let x = 1+2 in 2*(x+1)
+print (let x = 1 in x+2) * (let x = 2 in x+1)
+set y = let x = 1 in let y = 2 in let z = 3 in x+y+z
+print y+4
+# a variável local y que captura a variável global y
+print let y = 5 in y+y+1
+# mas só temporariamente
+print y+y
+
+# funções
+set id(x) = x
+print id(13)
+
+set succ(x) = x+1
+print succ(12+1)
+
+# cuidado à ordem das variáveis na pilha
+set subt(x,y) = x-y
+print subt(20,5)
+
+# função com variável local
+set f(x) = let y = x+x in y*y
+print f(2)
+print let y = 4 in f(1) + y + f(0) + (let y = 3 in f(1)-y) + y + y
+print f(succ(1))+2
+
+# função que invoca outra função
+set g(x,y,z) = subt(subt(f(x), f(y)), z)
+print g(3,2,1)
+
+
+
+
+

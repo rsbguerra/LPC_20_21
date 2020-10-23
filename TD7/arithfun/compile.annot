@@ -1,0 +1,663 @@
+"compile.ml" 10 107 112 "compile.ml" 10 107 116
+type(
+  (string, unit) Hashtbl.t
+)
+ident(
+  def genv "compile.ml" 12 166 166 "compile.ml" 0 0 -1
+)
+"compile.ml" 10 107 147 "compile.ml" 10 107 161
+type(
+  ?random:bool -> int -> (string, unit) Hashtbl.t
+)
+ident(
+  int_ref Stdlib.Hashtbl.create "hashtbl.mli" 28 1303 1303 "hashtbl.mli" 28 1303 1349
+)
+"compile.ml" 10 107 162 "compile.ml" 10 107 164
+type(
+  int
+)
+"compile.ml" 10 107 147 "compile.ml" 10 107 164
+type(
+  (string, unit) Hashtbl.t
+)
+"compile.ml" 16 229 237 "compile.ml" 16 229 247
+type(
+  'a -> 'b -> Ast.pexpr -> Ast.expr * 'b
+)
+ident(
+  def alloc_expr "compile.ml" 16 229 229 "compile.ml" 0 0 -1
+)
+"compile.ml" 16 229 248 "compile.ml" 16 229 251
+type(
+  'a
+)
+ident(
+  def env "compile.ml" 16 229 252 "compile.ml" 26 470 498
+)
+"compile.ml" 16 229 252 "compile.ml" 16 229 256
+type(
+  'b
+)
+ident(
+  def next "compile.ml" 16 229 259 "compile.ml" 26 470 498
+)
+"compile.ml" 17 268 277 "compile.ml" 17 268 278
+type(
+  int
+)
+ident(
+  def i "compile.ml" 18 282 286 "compile.ml" 18 282 297
+)
+"compile.ml" 17 268 272 "compile.ml" 17 268 278
+type(
+  Ast.pexpr
+)
+"compile.ml" 18 282 290 "compile.ml" 18 282 291
+type(
+  int
+)
+ident(
+  int_ref i "compile.ml" 17 268 277 "compile.ml" 17 268 278
+)
+"compile.ml" 18 282 286 "compile.ml" 18 282 291
+type(
+  Ast.expr
+)
+"compile.ml" 18 282 293 "compile.ml" 18 282 297
+type(
+  'b
+)
+ident(
+  int_ref next "compile.ml" 16 229 252 "compile.ml" 16 229 256
+)
+"compile.ml" 18 282 286 "compile.ml" 18 282 297
+type(
+  Ast.expr * 'b
+)
+"compile.ml" 19 298 307 "compile.ml" 19 298 308
+type(
+  string
+)
+ident(
+  def x "compile.ml" 20 312 316 "compile.ml" 20 312 340
+)
+"compile.ml" 19 298 302 "compile.ml" 19 298 308
+type(
+  Ast.pexpr
+)
+"compile.ml" 20 312 316 "compile.ml" 20 312 324
+type(
+  string -> Ast.expr * 'b
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"compile.ml" 20 312 325 "compile.ml" 20 312 340
+type(
+  string
+)
+"compile.ml" 20 312 316 "compile.ml" 20 312 340
+type(
+  Ast.expr * 'b
+)
+"compile.ml" 21 341 353 "compile.ml" 21 341 354
+type(
+  Ast.binop
+)
+ident(
+  def o "compile.ml" 22 366 370 "compile.ml" 22 366 394
+)
+"compile.ml" 21 341 356 "compile.ml" 21 341 358
+type(
+  Ast.pexpr
+)
+ident(
+  def e1 "compile.ml" 22 366 370 "compile.ml" 22 366 394
+)
+"compile.ml" 21 341 360 "compile.ml" 21 341 362
+type(
+  Ast.pexpr
+)
+ident(
+  def e2 "compile.ml" 22 366 370 "compile.ml" 22 366 394
+)
+"compile.ml" 21 341 345 "compile.ml" 21 341 363
+type(
+  Ast.pexpr
+)
+"compile.ml" 22 366 370 "compile.ml" 22 366 378
+type(
+  string -> Ast.expr * 'b
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"compile.ml" 22 366 379 "compile.ml" 22 366 394
+type(
+  string
+)
+"compile.ml" 22 366 370 "compile.ml" 22 366 394
+type(
+  Ast.expr * 'b
+)
+"compile.ml" 23 395 407 "compile.ml" 23 395 408
+type(
+  string
+)
+ident(
+  def x "compile.ml" 24 421 425 "compile.ml" 24 421 449
+)
+"compile.ml" 23 395 410 "compile.ml" 23 395 412
+type(
+  Ast.pexpr
+)
+ident(
+  def e1 "compile.ml" 24 421 425 "compile.ml" 24 421 449
+)
+"compile.ml" 23 395 414 "compile.ml" 23 395 416
+type(
+  Ast.pexpr
+)
+ident(
+  def e2 "compile.ml" 24 421 425 "compile.ml" 24 421 449
+)
+"compile.ml" 23 395 399 "compile.ml" 23 395 417
+type(
+  Ast.pexpr
+)
+"compile.ml" 24 421 425 "compile.ml" 24 421 433
+type(
+  string -> Ast.expr * 'b
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"compile.ml" 24 421 434 "compile.ml" 24 421 449
+type(
+  string
+)
+"compile.ml" 24 421 425 "compile.ml" 24 421 449
+type(
+  Ast.expr * 'b
+)
+"compile.ml" 25 450 461 "compile.ml" 25 450 462
+type(
+  string
+)
+ident(
+  def f "compile.ml" 26 470 474 "compile.ml" 26 470 498
+)
+"compile.ml" 25 450 464 "compile.ml" 25 450 465
+type(
+  Ast.pexpr list
+)
+ident(
+  def l "compile.ml" 26 470 474 "compile.ml" 26 470 498
+)
+"compile.ml" 25 450 454 "compile.ml" 25 450 466
+type(
+  Ast.pexpr
+)
+"compile.ml" 26 470 474 "compile.ml" 26 470 482
+type(
+  string -> Ast.expr * 'b
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"compile.ml" 26 470 483 "compile.ml" 26 470 498
+type(
+  string
+)
+"compile.ml" 26 470 474 "compile.ml" 26 470 498
+type(
+  Ast.expr * 'b
+)
+"compile.ml" 16 229 259 "compile.ml" 26 470 498
+type(
+  Ast.pexpr -> Ast.expr * 'b
+)
+"compile.ml" 28 500 504 "compile.ml" 28 500 514
+type(
+  Ast.pstmt -> Ast.stmt
+)
+ident(
+  def alloc_stmt "compile.ml" 39 713 713 "compile.ml" 0 0 -1
+)
+"compile.ml" 29 526 536 "compile.ml" 29 526 537
+type(
+  string
+)
+ident(
+  def x "compile.ml" 30 545 549 "compile.ml" 30 545 573
+)
+"compile.ml" 29 526 539 "compile.ml" 29 526 540
+type(
+  Ast.pexpr
+)
+ident(
+  def e "compile.ml" 30 545 549 "compile.ml" 30 545 573
+)
+"compile.ml" 29 526 530 "compile.ml" 29 526 541
+type(
+  Ast.pstmt
+)
+"compile.ml" 30 545 549 "compile.ml" 30 545 557
+type(
+  string -> Ast.stmt
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"compile.ml" 30 545 558 "compile.ml" 30 545 573
+type(
+  string
+)
+"compile.ml" 30 545 549 "compile.ml" 30 545 573
+type(
+  Ast.stmt
+)
+"compile.ml" 32 575 585 "compile.ml" 32 575 586
+type(
+  string
+)
+ident(
+  def f "compile.ml" 33 597 601 "compile.ml" 33 597 625
+)
+"compile.ml" 32 575 588 "compile.ml" 32 575 589
+type(
+  string list
+)
+ident(
+  def l "compile.ml" 33 597 601 "compile.ml" 33 597 625
+)
+"compile.ml" 32 575 591 "compile.ml" 32 575 592
+type(
+  Ast.pexpr
+)
+ident(
+  def e "compile.ml" 33 597 601 "compile.ml" 33 597 625
+)
+"compile.ml" 32 575 579 "compile.ml" 32 575 593
+type(
+  Ast.pstmt
+)
+"compile.ml" 33 597 601 "compile.ml" 33 597 609
+type(
+  string -> Ast.stmt
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"compile.ml" 33 597 610 "compile.ml" 33 597 625
+type(
+  string
+)
+"compile.ml" 33 597 601 "compile.ml" 33 597 625
+type(
+  Ast.stmt
+)
+"compile.ml" 35 627 638 "compile.ml" 35 627 639
+type(
+  Ast.pexpr
+)
+ident(
+  def e "compile.ml" 36 643 647 "compile.ml" 37 691 711
+)
+"compile.ml" 35 627 631 "compile.ml" 35 627 639
+type(
+  Ast.pstmt
+)
+"compile.ml" 36 643 651 "compile.ml" 36 643 652
+type(
+  Ast.expr
+)
+ident(
+  def e "compile.ml" 37 691 695 "compile.ml" 37 691 711
+)
+"compile.ml" 36 643 654 "compile.ml" 36 643 659
+type(
+  int
+)
+ident(
+  def fpmax "compile.ml" 37 691 695 "compile.ml" 37 691 711
+)
+"compile.ml" 36 643 651 "compile.ml" 36 643 659
+type(
+  Ast.expr * int
+)
+"compile.ml" 36 643 662 "compile.ml" 36 643 672
+type(
+  '_weak1 Smap.t -> int -> Ast.pexpr -> Ast.expr * int
+)
+ident(
+  int_ref alloc_expr "compile.ml" 16 229 237 "compile.ml" 16 229 247
+)
+"compile.ml" 36 643 673 "compile.ml" 36 643 683
+type(
+  '_weak1 Smap.t
+)
+ident(
+  int_ref Smap.empty "map.mli" 70 2817 2821 "map.mli" 70 2817 2836
+)
+"compile.ml" 36 643 684 "compile.ml" 36 643 685
+type(
+  int
+)
+"compile.ml" 36 643 686 "compile.ml" 36 643 687
+type(
+  Ast.pexpr
+)
+ident(
+  int_ref e "compile.ml" 35 627 638 "compile.ml" 35 627 639
+)
+"compile.ml" 36 643 662 "compile.ml" 36 643 687
+type(
+  Ast.expr * int
+)
+"compile.ml" 37 691 702 "compile.ml" 37 691 703
+type(
+  Ast.expr
+)
+ident(
+  int_ref e "compile.ml" 36 643 651 "compile.ml" 36 643 652
+)
+"compile.ml" 37 691 705 "compile.ml" 37 691 710
+type(
+  int
+)
+ident(
+  int_ref fpmax "compile.ml" 36 643 654 "compile.ml" 36 643 659
+)
+"compile.ml" 37 691 695 "compile.ml" 37 691 711
+type(
+  Ast.stmt
+)
+"compile.ml" 36 643 647 "compile.ml" 37 691 711
+type(
+  Ast.stmt
+)
+"compile.ml" 28 500 517 "compile.ml" 37 691 711
+type(
+  Ast.pstmt -> Ast.stmt
+)
+"compile.ml" 39 713 717 "compile.ml" 39 713 722
+type(
+  Ast.pstmt list -> Ast.stmt list
+)
+ident(
+  def alloc "compile.ml" 44 865 865 "compile.ml" 0 0 -1
+)
+"compile.ml" 39 713 725 "compile.ml" 39 713 733
+type(
+  (Ast.pstmt -> Ast.stmt) -> Ast.pstmt list -> Ast.stmt list
+)
+ident(
+  int_ref Stdlib.List.map "list.mli" 120 4625 4625 "list.mli" 120 4625 4667
+)
+"compile.ml" 39 713 734 "compile.ml" 39 713 744
+type(
+  Ast.pstmt -> Ast.stmt
+)
+ident(
+  int_ref alloc_stmt "compile.ml" 28 500 504 "compile.ml" 28 500 514
+)
+"compile.ml" 39 713 725 "compile.ml" 39 713 744
+type(
+  Ast.pstmt list -> Ast.stmt list
+)
+"compile.ml" 44 865 869 "compile.ml" 44 865 873
+type(
+  int -> X86_64.text
+)
+ident(
+  def popn "compile.ml" 45 901 901 "compile.ml" 0 0 -1
+)
+"compile.ml" 44 865 874 "compile.ml" 44 865 875
+type(
+  int
+)
+ident(
+  def n "compile.ml" 44 865 878 "compile.ml" 44 865 900
+)
+"compile.ml" 44 865 878 "compile.ml" 44 865 882
+type(
+  X86_64.operand -> X86_64.operand -> X86_64.text
+)
+ident(
+  int_ref X86_64.addq "x86_64.mli" 94 2472 2472 "x86_64.mli" 94 2472 2508
+)
+"compile.ml" 44 865 884 "compile.ml" 44 865 887
+type(
+  int -> X86_64.operand
+)
+ident(
+  int_ref X86_64.imm "x86_64.mli" 75 2011 2011 "x86_64.mli" 75 2011 2034
+)
+"compile.ml" 44 865 888 "compile.ml" 44 865 889
+type(
+  int
+)
+ident(
+  int_ref n "compile.ml" 44 865 874 "compile.ml" 44 865 875
+)
+"compile.ml" 44 865 883 "compile.ml" 44 865 890
+type(
+  X86_64.operand
+)
+"compile.ml" 44 865 892 "compile.ml" 44 865 895
+type(
+  X86_64.register -> X86_64.operand
+)
+ident(
+  int_ref X86_64.reg "x86_64.mli" 77 2047 2047 "x86_64.mli" 77 2047 2075
+)
+"compile.ml" 44 865 896 "compile.ml" 44 865 899
+type(
+  X86_64.register
+)
+ident(
+  int_ref X86_64.rsp "x86_64.mli" 57 1653 1653 "x86_64.mli" 57 1653 1670
+)
+"compile.ml" 44 865 891 "compile.ml" 44 865 900
+type(
+  X86_64.operand
+)
+"compile.ml" 44 865 878 "compile.ml" 44 865 900
+type(
+  X86_64.text
+)
+"compile.ml" 45 901 905 "compile.ml" 45 901 910
+type(
+  int -> X86_64.text
+)
+ident(
+  def pushn "compile.ml" 47 939 939 "compile.ml" 0 0 -1
+)
+"compile.ml" 45 901 911 "compile.ml" 45 901 912
+type(
+  int
+)
+ident(
+  def n "compile.ml" 45 901 915 "compile.ml" 45 901 937
+)
+"compile.ml" 45 901 915 "compile.ml" 45 901 919
+type(
+  X86_64.operand -> X86_64.operand -> X86_64.text
+)
+ident(
+  int_ref X86_64.subq "x86_64.mli" 95 2509 2509 "x86_64.mli" 95 2509 2545
+)
+"compile.ml" 45 901 921 "compile.ml" 45 901 924
+type(
+  int -> X86_64.operand
+)
+ident(
+  int_ref X86_64.imm "x86_64.mli" 75 2011 2011 "x86_64.mli" 75 2011 2034
+)
+"compile.ml" 45 901 925 "compile.ml" 45 901 926
+type(
+  int
+)
+ident(
+  int_ref n "compile.ml" 45 901 911 "compile.ml" 45 901 912
+)
+"compile.ml" 45 901 920 "compile.ml" 45 901 927
+type(
+  X86_64.operand
+)
+"compile.ml" 45 901 929 "compile.ml" 45 901 932
+type(
+  X86_64.register -> X86_64.operand
+)
+ident(
+  int_ref X86_64.reg "x86_64.mli" 77 2047 2047 "x86_64.mli" 77 2047 2075
+)
+"compile.ml" 45 901 933 "compile.ml" 45 901 936
+type(
+  X86_64.register
+)
+ident(
+  int_ref X86_64.rsp "x86_64.mli" 57 1653 1653 "x86_64.mli" 57 1653 1670
+)
+"compile.ml" 45 901 928 "compile.ml" 45 901 937
+type(
+  X86_64.operand
+)
+"compile.ml" 45 901 915 "compile.ml" 45 901 937
+type(
+  X86_64.text
+)
+"compile.ml" 47 939 947 "compile.ml" 47 939 959
+type(
+  Ast.expr -> '_weak2
+)
+ident(
+  def compile_expr "compile.ml" 47 939 939 "compile.ml" 0 0 -1
+)
+"compile.ml" 48 971 979 "compile.ml" 48 971 980
+type(
+  int
+)
+ident(
+  def i "compile.ml" 49 984 990 "compile.ml" 49 984 1003
+)
+"compile.ml" 48 971 975 "compile.ml" 48 971 980
+type(
+  Ast.expr
+)
+"compile.ml" 49 984 990 "compile.ml" 49 984 995
+type(
+  X86_64.register -> X86_64.text
+)
+ident(
+  int_ref X86_64.pushq "x86_64.mli" 144 3881 3881 "x86_64.mli" 144 3881 3909
+)
+"compile.ml" 49 984 997 "compile.ml" 49 984 1000
+type(
+  int -> X86_64.operand
+)
+ident(
+  int_ref X86_64.imm "x86_64.mli" 75 2011 2011 "x86_64.mli" 75 2011 2034
+)
+"compile.ml" 49 984 1001 "compile.ml" 49 984 1002
+type(
+  int
+)
+ident(
+  int_ref i "compile.ml" 48 971 979 "compile.ml" 48 971 980
+)
+"compile.ml" 49 984 996 "compile.ml" 49 984 1003
+type(
+  X86_64.operand
+)
+"compile.ml" 50 1004 1013 "compile.ml" 50 1004 1017
+type(
+  Ast.ident
+)
+ident(
+  def fp_x "compile.ml" 51 1021 1027 "compile.ml" 51 1021 1052
+)
+"compile.ml" 50 1004 1008 "compile.ml" 50 1004 1017
+type(
+  Ast.expr
+)
+"compile.ml" 52 1053 1062 "compile.ml" 52 1053 1063
+type(
+  string
+)
+ident(
+  def x "compile.ml" 53 1067 1073 "compile.ml" 53 1067 1086
+)
+"compile.ml" 52 1053 1057 "compile.ml" 52 1053 1063
+type(
+  Ast.expr
+)
+"compile.ml" 55 1088 1099 "compile.ml" 55 1088 1100
+type(
+  Ast.binop
+)
+ident(
+  def o "compile.ml" 56 1112 1118 "compile.ml" 64 1384 1406
+)
+"compile.ml" 55 1088 1102 "compile.ml" 55 1088 1104
+type(
+  Ast.expr
+)
+ident(
+  def e1 "compile.ml" 56 1112 1118 "compile.ml" 64 1384 1406
+)
+"compile.ml" 55 1088 1106 "compile.ml" 55 1088 1108
+type(
+  Ast.expr
+)
+ident(
+  def e2 "compile.ml" 56 1112 1118 "compile.ml" 64 1384 1406
+)
+"compile.ml" 55 1088 1092 "compile.ml" 55 1088 1109
+type(
+  Ast.expr
+)
+"compile.ml" 66 1408 1419 "compile.ml" 66 1408 1422
+type(
+  Ast.ident
+)
+ident(
+  def ofs "compile.ml" 67 1435 1441 "compile.ml" 69 1511 1532
+)
+"compile.ml" 66 1408 1424 "compile.ml" 66 1408 1426
+type(
+  Ast.expr
+)
+ident(
+  def e1 "compile.ml" 67 1435 1441 "compile.ml" 69 1511 1532
+)
+"compile.ml" 66 1408 1428 "compile.ml" 66 1408 1430
+type(
+  Ast.expr
+)
+ident(
+  def e2 "compile.ml" 67 1435 1441 "compile.ml" 69 1511 1532
+)
+"compile.ml" 66 1408 1412 "compile.ml" 66 1408 1431
+type(
+  Ast.expr
+)
+"compile.ml" 71 1534 1544 "compile.ml" 71 1534 1545
+type(
+  string
+)
+ident(
+  def f "compile.ml" 72 1553 1559 "compile.ml" 72 1553 1583
+)
+"compile.ml" 71 1534 1547 "compile.ml" 71 1534 1548
+type(
+  Ast.expr list
+)
+ident(
+  def l "compile.ml" 72 1553 1559 "compile.ml" 72 1553 1583
+)
+"compile.ml" 71 1534 1538 "compile.ml" 71 1534 1549
+type(
+  Ast.expr
+)
