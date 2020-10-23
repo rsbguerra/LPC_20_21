@@ -1,7 +1,7 @@
-BIN=mini-turtle
+BIN=miniturtle
 
 all:
-	dune build ./$(BIN).exe --verbose
+	dune build ./$(BIN).exe
 
 test: $(BIN)
 	for f in tests/*.logo; do ./$(BIN) $$f; done

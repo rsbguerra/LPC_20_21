@@ -3,7 +3,7 @@
 
 {
   open Lexing
-  open Parser
+  open Tokens
 
   (* excepção por levantar em caso de erro l�xico *)
   exception Lexing_error of string

@@ -9,13 +9,13 @@ let unbound_var s = raise (Error ("unbound variable " ^ s))
 let unbound_procedure f = raise (Error ("unbound procedure " ^ f))
 let bad_arity x = raise (Error ("bad arity for " ^ x))
 
-(* tabela de váriáveis globais *)
+(* tabela de vï¿½riï¿½veis globais *)
 let globals = Hashtbl.create 17
 
-(* estrutura de dados para as variáveis locais *)
+(* estrutura de dados para as variï¿½veis locais *)
 module Smap = Map.Make(String)
 
-(* expressões aritméticas *)
+(* expressï¿½es aritmï¿½ticas *)
 
 let binop = function
   | Add -> (+)
@@ -33,7 +33,7 @@ let rec expr env = function
 (* tabela dos procedimentos *)
 let procs = Hashtbl.create 17
 
-(* instruções *)
+(* instruï¿½ï¿½es *)
 
 let rec stmt env = function
   | Spenup ->
@@ -49,7 +49,7 @@ let rec stmt env = function
   | Sif (e, s1, s2) ->
       stmt env (if expr env e <> 0 then s1 else s2)
   | Srepeat (e, s) ->
-      for i = 1 to expr env e do stmt env s done
+      for _ = 1 to expr env e do stmt env s done
   | Sblock sl ->
       List.iter (stmt env) sl
   | Scall (x, el) ->

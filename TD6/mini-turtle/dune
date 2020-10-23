@@ -14,7 +14,7 @@
     (flags      --external-tokens Tokens))
 
 (executable
-  (name mini-turtle)
+  (name miniturtle)
   (modules_without_implementation ast)
   (libraries graphics)
   )

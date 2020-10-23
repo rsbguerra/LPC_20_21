@@ -1,5 +1,3 @@
-open Graphics
-
 type color = Graphics.color
 let black = Graphics.black
 let white = Graphics.white
@@ -9,7 +7,6 @@ let blue = Graphics.blue
 let set_color = Graphics.set_color
 
 module A = struct
-  type t = float
   let add = (+.)
   let pi_over_180 = atan 1. /. 45.
   let of_degrees d = d *. pi_over_180
