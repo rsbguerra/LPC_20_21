@@ -1,0 +1,20 @@
+;; Lexer
+(ocamllex
+    (modules lexer))
+
+;; Tokens
+(menhir
+    (modules tokens)
+    (flags   --only-tokens))
+
+;; Parser
+(menhir
+    (modules    tokens parser)
+    (merge_into parser)
+    (flags      --external-tokens Tokens))
+
+(executable
+  (name mini-turtle)
+  (modules_without_implementation ast)
+  (libraries graphics)
+  )
