@@ -17,20 +17,38 @@ let rec alloc_expr env next = function
   | PCst i ->
     Cst i, next
   | PVar x ->
-    failwith "POR COMPLETAR"
-  | PBinop (o, e1, e2)->
-    failwith "à compléter"
+    begin
+      try
+        let ofs_x = Smap.find x env in
+        LVar ofs_x, next
+      with Not_found ->
+        if not (Hashtbl.mem genv x) then raise (VarUndef x);
+        GVar x, next
+    end
+
+  | PBinop (o, e1, e2) ->
+    let x1, fp1 = alloc_expr env next e1 in
+    let x2, fp2 = alloc_expr env next e2 in
+    Binop (o, x1, x2), (max fp1 fp2)
+    
   | PLetin (x, e1, e2) ->
-    failwith "POR COMPLETAR"
+    let e1, fpmax1 = alloc_expr env next e1 in
+    let next = next + 8 in
+    let e2, fpmax2 = alloc_expr (Smap.add x (next) env) next e2 in
+    Letin (next, e1, e2), max fpmax1 fpmax2
+
   | PCall (f, l) ->
-    failwith "POR COMPLETAR"
+    failwith "POR COMPLETAR - PCall"
 
 let alloc_stmt = function
   | PSet (x, e) ->
-    failwith "POR COMPLETAR"
+    let e, fpmax = 
+      alloc_expr Smap.empty 0 e in
+      Hashtbl.replace genv x ();
+      Set (x, e, fpmax)
 
   | PFun (f, l, e) ->
-    failwith "POR COMPLETAR"
+    failwith "POR COMPLETAR - PFun"
 
   | PPrint e ->
     let e, fpmax = alloc_expr Smap.empty 0 e in
@@ -46,22 +64,21 @@ let pushn n = subq (imm n) (reg rsp)
 
 let rec compile_expr = function
   | Cst i ->
-      pushq (imm i)
+    pushq (imm i)
   | LVar fp_x ->
-      pushq (ind ~ofs:fp_x rbp)
+    pushq (ind ~ofs:fp_x rbp)
   | GVar x ->
-      pushq (lab x)
-
+    pushq (lab x)
   | Binop (o, e1, e2)->
-      compile_expr e1 ++
-      compile_expr e2 ++
-      popq rbx ++ popq rax ++
+    compile_expr e1 ++
+    compile_expr e2 ++
+    popq rbx ++ popq rax ++
       (match o with
         | Add -> addq (reg rbx) (reg rax)
         | Sub -> subq (reg rbx) (reg rax)
         | Mul -> imulq (reg rbx) (reg rax)
-        | Div -> cqto ++ idivq (reg rbx)) ++
-       pushq (reg rax)
+        | Div -> idivq (reg rbx)) ++
+          pushq (reg rax)
 
   | Letin (ofs, e1, e2) ->
       compile_expr e1 ++
@@ -95,7 +112,7 @@ let compile_program p ofile =
   let codefun, code = List.fold_left compile_stmt (nop, nop) p in
   let p =
     { text =
-        glabel "main" ++
+        globl "main" ++ label "main" ++
         movq (reg rsp) (reg rbp) ++
         code ++
         movq (imm 0) (reg rax) ++ (* exit *)
