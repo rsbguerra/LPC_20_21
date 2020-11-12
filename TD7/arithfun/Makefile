@@ -4,9 +4,12 @@ BIN=arithc
 FLAGS=-dtypes
 
 all: $(BIN)
-	./$(BIN) test.exp
+	./$(BIN) ./test/complete.exp
 	gcc -g test.s -o a.out
 	./a.out
+
+test:
+	bash run_test.sh
 
 $(BIN):$(CMO)
 	ocamlc $(FLAGS) -o $(BIN) $(CMO)
@@ -31,6 +34,7 @@ $(BIN):$(CMO)
 clean:
 	rm -f *.cm[io] *.o *.annot *~ $(BIN) $(GENERATED) test.s
 	rm -f parser.automaton
+	rm test/*.s
 
 .depend depend: $(GENERATED)
 	rm -f .depend
