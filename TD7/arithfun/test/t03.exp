@@ -1,0 +1,10 @@
+# funções
+set id(x) = x
+print id(13)
+
+set succ(x) = x+1
+print succ(12+1)
+
+# cuidado à ordem das variáveis na pilha
+set subt(x,y) = x-y
+print subt(20,5)

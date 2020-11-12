@@ -1,0 +1,6 @@
+# variáveis globais
+set x = 2
+print x*x+1
+
+set x = 3
+print 2*x

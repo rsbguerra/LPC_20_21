@@ -1,0 +1,5 @@
+# função com variável local
+set f(x) = let y = x+x in y*y
+print f(2)
+print let y = 4 in f(1) + y + f(0) + (let y = 3 in f(1)-y) + y + y
+print f(succ(1))+2

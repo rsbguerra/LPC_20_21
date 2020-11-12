@@ -1,0 +1,11 @@
+# variáveis locais
+print let x = 2 in 3*x+1
+print let x = 1+2 in 2*(x+1)
+print (let x = 1 in x+2) * (let x = 2 in x+1)
+set y = let x = 1 in let y = 2 in let z = 3 in x+y+z
+print y+4
+
+# a variável local y que captura a variável global y
+print let y = 5 in y+y+1
+# mas só temporariamente
+print y+y

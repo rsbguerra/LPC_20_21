@@ -1,0 +1,3 @@
+# função que invoca outra função
+set g(x,y,z) = subt(subt(f(x), f(y)), z)
+print g(3,2,1)
