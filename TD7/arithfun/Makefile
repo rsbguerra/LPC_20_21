@@ -5,7 +5,7 @@ FLAGS=-dtypes
 
 all: $(BIN)
 	./$(BIN) ./test/complete.exp
-	gcc -g test.s -o a.out
+	gcc -g ./test/complete.s -o a.out
 	./a.out
 
 test:

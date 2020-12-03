@@ -38,7 +38,11 @@ let rec alloc_expr env next = function
     Letin (next, e1, e2), max fpmax1 fpmax2
 
   | PCall (f, l) ->
-    failwith "POR COMPLETAR - PCall"
+  let l, fpmax = 
+    List.fold_left 
+    (fun (l, fpmax) e -> let e, fpmax2 = alloc_expr env next e in
+      e::l, max fpmax fpmax2) ([], next) l in
+    Call (f, List.rev l), fpmax
 
 let alloc_stmt = function
   | PSet (x, e) ->
@@ -48,8 +52,13 @@ let alloc_stmt = function
       Set (x, e, fpmax)
 
   | PFun (f, l, e) ->
-    failwith "POR COMPLETAR - PFun"
-
+    let env, next = 
+      List.fold_right
+      (fun x (env, next) -> 
+        let next = next + 8 in 
+        Smap.add x next env, next) l (Smap.empty, 8) in
+        let e, fpmax = alloc_expr env 0 e in 
+        Fun (f, e, fpmax)
   | PPrint e ->
     let e, fpmax = alloc_expr Smap.empty 0 e in
     Print (e, fpmax)
@@ -86,7 +95,8 @@ let rec compile_expr = function
       compile_expr e2
 
   | Call (f, l) ->
-      failwith "POR COMPLETAR"
+      List.fold_left (fun code e -> code ++ compile_expr e) nop l ++
+      call f ++ popn (8 * List.length l) ++ pushq (reg rax)
 
 let compile_stmt (codefun, codemain) = function
   | Set (x, e, fpmax) ->
@@ -95,10 +105,14 @@ let compile_stmt (codefun, codemain) = function
       let pre, post = if fpmax > 0 then pushn fpmax, popn fpmax else nop, nop in
       pre ++ code ++ popq rax ++ movq (reg rax) (lab x) ++ post in
     codefun, codemain ++ code
-
   | Fun (f, e, fpmax) ->
-    failwith "POR COMPLETAR"
-
+    let code = 
+      label f ++
+      pushq (reg rbp) ++
+      movq (reg rsp) (reg rbp) ++ pushn fpmax ++
+      compile_expr e ++ popq rax ++
+      popn fpmax ++ popq rbp ++ ret in 
+    code ++ codefun, codemain
   | Print (e, fpmax) ->
     let code = compile_expr e in
     let code =
